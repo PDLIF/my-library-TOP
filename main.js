@@ -1,12 +1,29 @@
-const myLibrary = [];
+class Library {
+    constructor() {
+        this.myLibrary = [];
+    }
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.info = function() {
-        return `${title}, ${author}, ${pages}, ${read}`
+    addBook(book) {
+        this.myLibrary.push(book);
+    }
+
+    getLibrary() {
+        return this.myLibrary;
+    }
+}
+
+const myLibrary = new Library();
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    
+    info() {
+        return `${this.title}, ${this.author}, ${this.pages}, ${this.read}`
     }
 }
 
@@ -16,7 +33,7 @@ Book.prototype.toggleReadStatus = function() {
 
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
+  myLibrary.addBook(newBook);
   displayLibrary();
 }
 
@@ -24,7 +41,7 @@ function displayLibrary() {
     const libraryDisplay = document.getElementById("libraryDisplay");
     libraryDisplay.innerHTML = "";
 
-    myLibrary.forEach((book, index) => {
+    myLibrary.getLibrary().forEach((book, index) => {
         const bookCard = document.createElement("div");
         bookCard.classList.add("card");
 
