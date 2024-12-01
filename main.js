@@ -17,25 +17,23 @@ document.getElementById("bookForm").addEventListener("submit", (event) => {
 });
 
 class Library {
-    constructor() {
-        this.myLibrary = [];
-    }
+    #myLibrary = [];
 
     addBook(title, author, pages, read) {
         const newBook = new Book(title, author, pages, read);
-        this.myLibrary.push(newBook);
+        this.#myLibrary.push(newBook);
         this.displayLibrary();
     }
 
     getLibrary() {
-        return this.myLibrary;
+        return this.#myLibrary;
     }
 
     displayLibrary() {
         const libraryDisplay = document.getElementById("libraryDisplay");
         libraryDisplay.innerHTML = "";
     
-        myLibrary.getLibrary().forEach((book, index) => {
+        this.#myLibrary.forEach((book, index) => {
             const bookCard = document.createElement("div");
             bookCard.classList.add("card");
     
@@ -78,16 +76,18 @@ function addEventListeners() {
     document.querySelectorAll(".toggleRead").forEach((button) => {
         button.addEventListener("click", (event) => {
             const index = event.target.dataset.index;
-            myLibrary[index].toggleReadStatus();
-            displayLibrary();
+            const Library = myLibrary.getLibrary();
+            Library[index].toggleReadStatus();
+            myLibrary.displayLibrary();
         });
     });
 
     document.querySelectorAll(".removeBook").forEach((button) => {
         button.addEventListener("click", (event) => {
             const index = event.target.dataset.index;
-            myLibrary.splice(index, 1);
-            displayLibrary();
+            const Library = myLibrary.getLibrary();
+            Library.splice(index, 1);
+            myLibrary.displayLibrary();
         });
     });
 }
