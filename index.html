@@ -18,7 +18,7 @@
             </div>
             <div class="formField">
                 <label for="author">Author:</label>
-                <input type="text" id="author" name="author" required>
+                <input type="text" id="author" name="author" pattern="[A-Za-z\s]+" required>
             </div>
             <div class="formField">
                 <label for="pages">Pages:</label>
@@ -27,6 +27,7 @@
             <div class="formField">
                 <label for="read">Read:</label>
                 <select name="read" id="read">
+                    <option value="Not selected" disabled selected>Not selected</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -35,6 +36,6 @@
         </form>
     </dialog>
     <div id="libraryDisplay"></div>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

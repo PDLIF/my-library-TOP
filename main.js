@@ -91,3 +91,23 @@ function addEventListeners() {
         });
     });
 }
+
+
+
+
+
+// constraint validation
+
+const authorInput = document.getElementById('author');
+
+const checkAuthor = () => {
+    if (authorInput.validity.patternMismatch) {
+        authorInput.setCustomValidity('The author\'s name should consist only letters');
+    } else {
+        authorInput.setCustomValidity('');
+    }
+}
+
+window.onload = () => {
+    authorInput.oninput = checkAuthor;
+}
