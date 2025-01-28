@@ -42,11 +42,11 @@ class Library {
     
             bookCard.innerHTML = `
                 <h3>${book.title}</h3>
-                <p><strong>Author:</strong>  ${book.author}</p>
-                <p><strong>Pages:</strong>  ${book.pages}</p>
-                <p><strong>Read:</strong>  ${book.read}</p>
-                <button class="toggleRead text-light fs-300" data-index="${index}">Toggle Read Status</button>
-                <button class="removeBook text-light fs-300" data-index="${index}">Remove Book</button>
+                <p><strong>Author:</strong> ${book.author}</p>
+                <p><strong>Pages:</strong> ${book.pages}</p>
+                <p><strong>Read:</strong> ${book.read}</p>
+                <button class="toggleRead bg-dark text-light fs-300" data-index="${index}">Toggle Read Status</button>
+                <button class="removeBook bg-dark text-light fs-300" data-index="${index}">Remove Book</button>
             `;
     
             libraryDisplay.appendChild(bookCard);

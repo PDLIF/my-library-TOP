@@ -177,8 +177,27 @@ select {
     padding: 10px 20px;
     margin-bottom: 20px;
     border-radius: 20px;
-    border: 2px solid rgb(101, 100, 100);
 }
+
+button {
+    cursor: pointer;
+    border: 2px solid hsl( var(--clr-light) );
+    border-radius: 1rem;
+}
+
+button:hover {
+    background-color: hsl( var(--clr-dark) / .6 );
+}
+
+input,
+select {
+    background-color: hsl( var(--clr-dark) );
+    color: hsl( var(--clr-white) );
+    padding-inline: .5rem;
+}
+
+/* main conent */
+
 
 #newBookButton:focus-visible {
     border-radius: 0px;
@@ -232,19 +251,17 @@ dialog {
     margin-right: 1rem;
 }
 
+button {
+    cursor: pointer;
+    border: 2px solid hsl( var(--clr-light) );
+    border-radius: 1rem;
+}
+
 .card > button {
     align-self: end;
-    border-radius: 1rem;
     border: none;
     padding-inline: 1rem;
-    background-color: hsl( var(--clr-dark) );
-    cursor: pointer;
 }
-
-.card > button:hover {
-    background-color: hsl( var(--clr-dark) / .6 );
-}
-
 
 
 /* ------------------- */
